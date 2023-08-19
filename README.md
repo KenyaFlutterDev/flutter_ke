@@ -23,7 +23,7 @@ Flutter Devs Kenya is a community of Flutter enthusiasts, developers, and learne
 - **Join Us:** Connect with us on [Telegram](https://t.me/joinchat/bJY8P_7m5UM3YWE8). 📢
 - **Contribute:** Join our discussions and projects. 🤓
 - **Events:** Stay tuned for upcoming events. 📅
-- **Social:** Follow us on [Twitter](https://twitter.com/FlutterDevsKe) and [LinkedIn](https://www.linkedin.com/company/flutterdevske). 📣
+- **Social:** Follow us on [Twitter](https://twitter.com/KenyaFlutterDev). 📣
 
 ## Contact 📬
 
