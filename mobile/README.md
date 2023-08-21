@@ -5,6 +5,35 @@ The Flutter Devs ke mobile application
 ## Getting Started
 
 This project is a starting point for the flutter devs ke mobile app
+Since the application is made using flutter, you will first have to install and set up [Flutter](https://docs.flutter.dev/get-started/install)
+
+Clone this repository by typing the following command on the terminal/command prompt
+
+```
+    git clone https://github.com/KenyaFlutterDev/flutter_ke.git
+```
+
+Go to the mobile folder:
+
+```
+    cd mobile
+```
+
+Get the dependencies
+
+```
+    flutter pub get
+```
+
+Use build_runner to generate required files
+```
+    dart run build_runner watch
+```
+
+Finally run the project and make changes as you wish
+```
+    flutter run
+```
 
 ## Documentation  
 
