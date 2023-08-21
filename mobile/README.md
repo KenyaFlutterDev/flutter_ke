@@ -7,10 +7,11 @@ The Flutter Devs ke mobile application
 This project is a starting point for the flutter devs ke mobile app
 Since the application is made using flutter, you will first have to install and set up [Flutter](https://docs.flutter.dev/get-started/install)
 
-Clone this repository by typing the following command on the terminal/command prompt
+Fork this repository
+Clone the forked repository. Replace "[Git username]" with your GitHub username
 
 ```
-    git clone https://github.com/KenyaFlutterDev/flutter_ke.git
+    git clone https://github.com/[Git username]/flutter_ke.git
 ```
 
 Go to the mobile folder:
