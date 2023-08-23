@@ -25,7 +25,7 @@ Flutter Devs Kenya is a community of Flutter enthusiasts, developers, and learne
 - **Events:** Stay tuned for upcoming events. 📅
 - **Social:** Follow us on [Twitter](https://twitter.com/KenyaFlutterDev). 📣
 
-## Reasons fo Supabase Usage ![supabase](image.png)
+## Reasons for Supabase Usage ![supabase](image.png)
 
 **Open-Source Nature** 
 Supabase being open-source, you are not bound to any particular vendor (Zero lock-ins). You have the freedom to host it in your own cloud or even run it locally.
@@ -53,6 +53,25 @@ Supabase provides a globally distributed cluster of Realtime servers that enable
 
 **AI & Vectors**
 You can develop AI applications using Postgres and pgvector.  For [more](https://supabase.com/docs/guides/ai) . 
+
+**Authentification & Authorization** 
+Supabase provides easy authentification and authorization
+You can authenticate your users in several ways:
+
+- Email & password.
+- Magic links (one-click logins).
+- Social providers.
+- Phone logins.
+
+**User Management**
+Supabase provides multiple endpoints to authenticate and manage your users:
+- Sign up
+- Sign in with password
+- Sign in with passwordless / one-time password (OTP)
+- Sign in with OAuth
+- Sign out
+
+
 ## Contact 📬
 
 For inquiries, reach out on our [Telegram](https://t.me/joinchat/bJY8P_7m5UM3YWE8) . 📱
