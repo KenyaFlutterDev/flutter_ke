@@ -38,6 +38,11 @@ Finally run the project and make changes as you wish
 
 ## Documentation  
 
+### State Management - Riverpod
+
+State management is a hot topic within flutter. The choice of one greatly impacts the arhitecture of
+the app. This [article](https://medium.com/@michael.mboya/building-flutter-kenya-why-we-use-riverpod-b7fc334a27d1) explains the reasoning behind choosing riverpod
+
 ### Routing package - gorouter  
 
 [gorouter](https://pub.dev/) on pub.dev.  
