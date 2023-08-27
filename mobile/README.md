@@ -7,18 +7,6 @@ The Flutter Devs ke mobile application
 This project is a starting point for the flutter devs ke mobile app
 Since the application is made using flutter, you will first have to install and set up [Flutter](https://docs.flutter.dev/get-started/install)
 
-We also use [Supabase](https://supabase.com) for our backend services. Head on over to (https://supabase.com), sign in and create a project. You can name it flutter_ke for consistency, but the name does not really affect the functionality. The exact schema will be provided.
-
-After creating the project, you will have access to the projectURL and the anonimous key. 
-Create a .env file and store them there as follows
-
-```
-    SUPABASE_URL=https://projectid.supabase.co
-    SUPABASE_ANON=anon_key
-
-```
-
-
 Fork this repository
 Clone the forked repository. Replace "[Git username]" with your GitHub username
 

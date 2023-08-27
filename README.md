@@ -1,66 +1,79 @@
-# mobile
+# Flutter Devs Kenya 🚀
 
-The Flutter Devs ke mobile application
+Welcome to the Flutter Devs Kenya project! 🇰🇪
 
-## Getting Started
+## About Us 👋
 
-This project is a starting point for the flutter devs ke mobile app
-Since the application is made using flutter, you will first have to install and set up [Flutter](https://docs.flutter.dev/get-started/install)
+Flutter Devs Kenya is a community of Flutter enthusiasts, developers, and learners. Join us on this exciting Flutter-fueled journey to enhance your skills and engage with fellow enthusiasts. 🌟
 
-Fork this repository
-Clone the forked repository. Replace "[Git username]" with your GitHub username
+## What We Offer 🌈
 
-```
-    git clone https://github.com/[Git username]/flutter_ke.git
-```
+- **Learning:** Access resources, tutorials, and discussions to enhance your Flutter skills. 📚
+- **Events:** Participate in meetups, workshops, hackathons, and conferences. 🎉
+- **Community:** Connect with developers of all levels and backgrounds. 👥
+- **Collaboration:** Contribute to projects and open-source initiatives. 🤝
 
-Go to the mobile folder:
+## Project Details 🛠️
 
-```
-    cd mobile
-```
+- **Website:** Built using Nuxt 3 for modern web applications. 💻
+- **Mobile App:** Flutter-based app for convenient access. 📱
 
-Get the dependencies
+## Get Involved 🙌
 
-```
-    flutter pub get
-```
+- **Join Us:** Connect with us on [Telegram](https://t.me/joinchat/bJY8P_7m5UM3YWE8). 📢
+- **Contribute:** Join our discussions and projects. 🤓
+- **Events:** Stay tuned for upcoming events. 📅
+- **Social:** Follow us on [Twitter](https://twitter.com/KenyaFlutterDev). 📣
 
-Use build_runner to generate required files
-```
-    dart run build_runner watch
-```
+## Reasons for Supabase Usage ![supabase](image.png)
 
-Finally run the project and make changes as you wish
-```
-    flutter run
-```
+**Open-Source Nature** 
+Supabase being open-source, you are not bound to any particular vendor (Zero lock-ins). You have the freedom to host it in your own cloud or even run it locally.
 
-## Documentation  
+**SQL querying** 
+PostgreSQL allows you to interact with your data using SQL, a widely adopted query language known for its flexibility and expressive power. This enables developers to leverage their existing SQL knowledge and skills seamlessly.
 
-### State Management - Riverpod
+**Pricing Model**
+Supabase charges solely based on the amount of data stored.
 
-State management is a hot topic within flutter. The choice of one greatly impacts the arhitecture of
-the app. This [article](https://medium.com/@michael.mboya/building-flutter-kenya-why-we-use-riverpod-b7fc334a27d1) explains the reasoning behind choosing riverpod
+**Self-hosting**
+With supabase u can use 
+Supabase Cloud: Fully managed service 
+Docker: deploy to your own infrastructure.
 
-### Routing package - gorouter  
+**Performance Advantage** 
+Supabase is quite fast through its read and write operations u can check benchamarks [here](https://github.com/supabase/benchmarks) ⚡️
 
-[gorouter](https://pub.dev/) on pub.dev.  
-Gorouter is a routing package for flutter that uses the Router API providing convinient, url-based API for navigating between different screens.  
-We chose gorouter for our project because you can define url patterns, handle url navigation, deep linking and its rich set of features.  
+**Real-time**
+Supabase provides a globally distributed cluster of Realtime servers that enable the following functionality:
 
-Features and pros of using gorouter  
-- Named routes  
-- Parsing path and query params with a templet syntax, eg "user/:id"  
-- Subroutes - displaying multiple screens for a destination  
-- Supports redirection  
-- Support for multiple navigators via [ShellRoute](https://pub.dev/documentation/go_router/latest/go_router/ShellRoute-class.html)  
-- Supports both Material and Cupertino apps  
-- Type-safe routes  
-- Custom transitions and animations  
-- Elegant and declarative approach to routing  
+- Broadcast: Send ephemeral messages from client to clients with low latency.
+- Presence: Track and synchronize shared state between clients.
+- Postgres Changes: Listen to Postgres database changes and send them to authorized clients.
 
-Cons of using gorouter  
-- There is a potential increase in the size of our application due to using gorouter package.  
-- Learning curve, Our contributers that have been using the default inbuilt routing package will have to familiarize and learn how to use it.
+**AI & Vectors**
+You can develop AI applications using Postgres and pgvector.  For [more](https://supabase.com/docs/guides/ai) . 
 
+**Authentification & Authorization** 
+Supabase provides easy authentification and authorization
+You can authenticate your users in several ways:
+
+- Email & password.
+- Magic links (one-click logins).
+- Social providers.
+- Phone logins.
+
+**User Management**
+Supabase provides multiple endpoints to authenticate and manage your users:
+- Sign up
+- Sign in with password
+- Sign in with passwordless / one-time password (OTP)
+- Sign in with OAuth
+- Sign out
+
+
+## Contact 📬
+
+For inquiries, reach out on our [Telegram](https://t.me/joinchat/bJY8P_7m5UM3YWE8) . 📱
+
+Let's Flutter together! 🦋🚀
