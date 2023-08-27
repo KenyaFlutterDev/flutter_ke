@@ -1,78 +1,79 @@
-# mobile
+# Flutter Devs Kenya 🚀
 
-The Flutter Devs ke mobile application
+Welcome to the Flutter Devs Kenya project! 🇰🇪
 
-## Getting Started
+## About Us 👋
 
-This project is a starting point for the flutter devs ke mobile app
-Since the application is made using flutter, you will first have to install and set up [Flutter](https://docs.flutter.dev/get-started/install)
+Flutter Devs Kenya is a community of Flutter enthusiasts, developers, and learners. Join us on this exciting Flutter-fueled journey to enhance your skills and engage with fellow enthusiasts. 🌟
 
-We also use [Supabase](https://supabase.com) for our backend services. Head on over to (https://supabase.com), sign in and create a project. You can name it flutter_ke for consistency, but the name does not really affect the functionality. The exact schema will be provided.
+## What We Offer 🌈
 
-After creating the project, you will have access to the projectURL and the anonimous key. 
-Create a .env file and store them there as follows
+- **Learning:** Access resources, tutorials, and discussions to enhance your Flutter skills. 📚
+- **Events:** Participate in meetups, workshops, hackathons, and conferences. 🎉
+- **Community:** Connect with developers of all levels and backgrounds. 👥
+- **Collaboration:** Contribute to projects and open-source initiatives. 🤝
 
-```
-    SUPABASE_URL=https://projectid.supabase.co
-    SUPABASE_ANON=anon_key
+## Project Details 🛠️
 
-```
+- **Website:** Built using Nuxt 3 for modern web applications. 💻
+- **Mobile App:** Flutter-based app for convenient access. 📱
+
+## Get Involved 🙌
+
+- **Join Us:** Connect with us on [Telegram](https://t.me/joinchat/bJY8P_7m5UM3YWE8). 📢
+- **Contribute:** Join our discussions and projects. 🤓
+- **Events:** Stay tuned for upcoming events. 📅
+- **Social:** Follow us on [Twitter](https://twitter.com/KenyaFlutterDev). 📣
+
+## Reasons for Supabase Usage ![supabase](image.png)
+
+**Open-Source Nature** 
+Supabase being open-source, you are not bound to any particular vendor (Zero lock-ins). You have the freedom to host it in your own cloud or even run it locally.
+
+**SQL querying** 
+PostgreSQL allows you to interact with your data using SQL, a widely adopted query language known for its flexibility and expressive power. This enables developers to leverage their existing SQL knowledge and skills seamlessly.
+
+**Pricing Model**
+Supabase charges solely based on the amount of data stored.
+
+**Self-hosting**
+With supabase u can use 
+Supabase Cloud: Fully managed service 
+Docker: deploy to your own infrastructure.
+
+**Performance Advantage** 
+Supabase is quite fast through its read and write operations u can check benchamarks [here](https://github.com/supabase/benchmarks) ⚡️
+
+**Real-time**
+Supabase provides a globally distributed cluster of Realtime servers that enable the following functionality:
+
+- Broadcast: Send ephemeral messages from client to clients with low latency.
+- Presence: Track and synchronize shared state between clients.
+- Postgres Changes: Listen to Postgres database changes and send them to authorized clients.
+
+**AI & Vectors**
+You can develop AI applications using Postgres and pgvector.  For [more](https://supabase.com/docs/guides/ai) . 
+
+**Authentification & Authorization** 
+Supabase provides easy authentification and authorization
+You can authenticate your users in several ways:
+
+- Email & password.
+- Magic links (one-click logins).
+- Social providers.
+- Phone logins.
+
+**User Management**
+Supabase provides multiple endpoints to authenticate and manage your users:
+- Sign up
+- Sign in with password
+- Sign in with passwordless / one-time password (OTP)
+- Sign in with OAuth
+- Sign out
 
 
-Fork this repository
-Clone the forked repository. Replace "[Git username]" with your GitHub username
+## Contact 📬
 
-```
-    git clone https://github.com/[Git username]/flutter_ke.git
-```
+For inquiries, reach out on our [Telegram](https://t.me/joinchat/bJY8P_7m5UM3YWE8) . 📱
 
-Go to the mobile folder:
-
-```
-    cd mobile
-```
-
-Get the dependencies
-
-```
-    flutter pub get
-```
-
-Use build_runner to generate required files
-```
-    dart run build_runner watch
-```
-
-Finally run the project and make changes as you wish
-```
-    flutter run
-```
-
-## Documentation  
-
-### State Management - Riverpod
-
-State management is a hot topic within flutter. The choice of one greatly impacts the arhitecture of
-the app. This [article](https://medium.com/@michael.mboya/building-flutter-kenya-why-we-use-riverpod-b7fc334a27d1) explains the reasoning behind choosing riverpod
-
-### Routing package - gorouter  
-
-[gorouter](https://pub.dev/) on pub.dev.  
-Gorouter is a routing package for flutter that uses the Router API providing convinient, url-based API for navigating between different screens.  
-We chose gorouter for our project because you can define url patterns, handle url navigation, deep linking and its rich set of features.  
-
-Features and pros of using gorouter  
-- Named routes  
-- Parsing path and query params with a templet syntax, eg "user/:id"  
-- Subroutes - displaying multiple screens for a destination  
-- Supports redirection  
-- Support for multiple navigators via [ShellRoute](https://pub.dev/documentation/go_router/latest/go_router/ShellRoute-class.html)  
-- Supports both Material and Cupertino apps  
-- Type-safe routes  
-- Custom transitions and animations  
-- Elegant and declarative approach to routing  
-
-Cons of using gorouter  
-- There is a potential increase in the size of our application due to using gorouter package.  
-- Learning curve, Our contributers that have been using the default inbuilt routing package will have to familiarize and learn how to use it.
-
+Let's Flutter together! 🦋🚀
