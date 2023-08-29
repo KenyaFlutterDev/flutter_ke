@@ -30,6 +30,13 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: "stable"
+
+      - name: Create .env file
+        run: |
+          cat > assets/.env <<EOF
+          SUPABASE_URL=${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON=${{ secrets.SUPABASE_ANON }}
+          EOF
           
       - name: Get dependencies
         run: flutter pub get
