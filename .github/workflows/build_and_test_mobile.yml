@@ -31,12 +31,11 @@ jobs:
         with:
           channel: "stable"
 
-      - name: Create .env file
-        run: |
-          cat > assets/.env <<EOF
-          SUPABASE_URL=${{ secrets.SUPABASE_URL }}
-          SUPABASE_ANON=${{ secrets.SUPABASE_ANON }}
-          EOF
+      - uses: SpicyPizza/create-envfile@v2.0
+        with: 
+          envkey_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          envkey_SUPABASE_ANON: ${{ secrets.SUPABASE_ANON }}
+          directory: mobile
           
       - name: Get dependencies
         run: flutter pub get
