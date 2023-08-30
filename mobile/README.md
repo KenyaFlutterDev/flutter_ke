@@ -38,6 +38,11 @@ Finally run the project and make changes as you wish
 
 ## Documentation  
 
+### Code generation
+
+This project uses code generation through freezed and riverpod. Code generation can be a divisive topic.
+[Here's why we chose to use code generation](https://medium.com/@michael.mboya/flutter-why-generate-code-42c09fd386a3)
+
 ### State Management - Riverpod
 
 State management is a hot topic within flutter. The choice of one greatly impacts the arhitecture of
