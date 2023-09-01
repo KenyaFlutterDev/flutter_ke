@@ -171,13 +171,13 @@ This action sets up the Supabase CLI, supabase, on GitHub's hosted Actions runne
 
 This action can be run on ubuntu-latest, windows-latest, and macos-latest GitHub Actions runners, and will install and expose a specified version of the supabase CLI on the runner environment.
 
-u can see the actions usage[here](https://github.com/marketplace/actions/supabase-cli-action)
+u can see the actions usage [here](https://github.com/marketplace/actions/supabase-cli-action)
 
 ***Generate types using GitHub Actions***
 <br/>
 End-to-end type safety across client, server, and database.
 
-U can check here the usage[here](https://supabase.com/docs/guides/cli/github-action/generating-types)
+U can check here the usage [here](https://supabase.com/docs/guides/cli/github-action/generating-types)
 ## Contact 📬
 
 For inquiries, reach out on our [Telegram](https://t.me/joinchat/bJY8P_7m5UM3YWE8) . 📱
