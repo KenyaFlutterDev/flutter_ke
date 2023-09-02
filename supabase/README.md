@@ -107,7 +107,7 @@ Finished supabase link.
 supabase init
 ```
 
-[details](https://supabase.com/docs/reference/cli/supabase-init)
+[details here](https://supabase.com/docs/reference/cli/supabase-init)
 
 <br/>
 
@@ -117,7 +117,7 @@ then start the database
 supabase start
 ```
 
-[details](https://supabase.com/docs/reference/cli/supabase-start)
+[details here📝](https://supabase.com/docs/reference/cli/supabase-start)
 
 
 Manage database migrations
