@@ -1,1 +1,1 @@
-export 'supabase_options.dart';
+export 'locator.dart';

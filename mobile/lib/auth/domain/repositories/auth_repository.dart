@@ -6,25 +6,25 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 class AuthRepository {
   AuthRepository({
     required GoogleSignIn googleSignIn,
-    required GoogleSignInAccount googleSignInAccount,
+    required GoTrueClient supabaseAuth,
   }) {
     _googleSignIn = googleSignIn;
-    _googleSignInAccount = googleSignInAccount;
+    _supabaseAuth = supabaseAuth;
   }
 
-  final _supabase = Supabase.instance.client;
+  late GoTrueClient _supabaseAuth;
+  // = ;
   late final GoogleSignIn _googleSignIn;
-  late final GoogleSignInAccount _googleSignInAccount;
 
   UserModel? _userFromSupabase(User? user) {
     if (user == null) {
       return null;
     }
-    return UserModel(user.id, user.email);
+    return UserModel(uid: user.id, email: user.email);
   }
 
   Stream<UserModel?>? get user {
-    return _supabase.auth.onAuthStateChange.map(
+    return _supabaseAuth.onAuthStateChange.map(
       (event) => _userFromSupabase(event.session?.user),
     );
   }
@@ -33,7 +33,7 @@ class AuthRepository {
     required String email,
     required String password,
   }) async {
-    final credential = await _supabase.auth.signInWithPassword(
+    final credential = await _supabaseAuth.signInWithPassword(
       password: password,
       email: email,
     );
@@ -45,7 +45,7 @@ class AuthRepository {
     required String email,
     required String password,
   }) async {
-    final credential = await _supabase.auth.signUp(
+    final credential = await _supabaseAuth.signUp(
       password: password,
       email: email,
     );
@@ -56,10 +56,9 @@ class AuthRepository {
   Future<UserModel?> signInWithGoogle() async {
     final googleUser = await _googleSignIn.signIn();
     if (googleUser == null) return null;
-    _googleSignInAccount = googleUser;
 
     final googleAuth = await googleUser.authentication;
-    final credential = await _supabase.auth.signInWithIdToken(
+    final credential = await _supabaseAuth.signInWithIdToken(
       provider: Provider.google,
       idToken: '${googleAuth.idToken}',
     );
@@ -77,7 +76,7 @@ class AuthRepository {
 
     if (result.identityToken?.isEmpty ?? false) return null;
 
-    final credential = await _supabase.auth.signInWithIdToken(
+    final credential = await _supabaseAuth.signInWithIdToken(
       provider: Provider.apple,
       idToken: '${result.identityToken}',
     );
@@ -86,6 +85,6 @@ class AuthRepository {
   }
 
   Future<void> signOut() async {
-    await _supabase.auth.signOut(scope: SignOutScope.local);
+    await _supabaseAuth.signOut(scope: SignOutScope.local);
   }
 }

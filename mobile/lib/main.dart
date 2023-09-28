@@ -3,6 +3,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mobile/global/providers/supabase_provider.dart';
 import 'package:mobile/router/router.dart';
+import 'package:mobile/utils/utils.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {
@@ -15,6 +16,8 @@ Future<void> main() async {
     url: supabaseURL!,
     anonKey: supabaseAnonKey!,
   );
+
+  setupLocator();
 
   runApp(
     ProviderScope(
