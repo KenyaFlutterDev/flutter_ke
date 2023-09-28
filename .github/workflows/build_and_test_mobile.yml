@@ -1,0 +1,47 @@
+name: build-and-test-mobile
+on:
+  pull_request:
+    types: [opened, reopened]
+    paths:
+      - "mobile/**"
+
+  push:
+    branches:
+      - main
+    paths:
+      - "mobile/**"
+
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: mobile
+
+jobs:
+  build:
+    name: Build and test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v2
+        with:
+          distribution: "zulu"
+          java-version: "11"
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: "stable"
+
+      - uses: SpicyPizza/create-envfile@v2.0
+        with: 
+          envkey_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          envkey_SUPABASE_ANON: ${{ secrets.SUPABASE_ANON }}
+          directory: mobile
+          
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Run flutter tests
+        run: flutter test
+
+      - name: 'Build appbundle'
+        run: flutter build appbundle
