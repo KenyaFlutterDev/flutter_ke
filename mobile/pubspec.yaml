@@ -44,7 +44,6 @@ dependencies:
   supabase_flutter: ^1.10.16
   google_sign_in: ^6.1.5
   sign_in_with_apple: ^5.0.0
-  get_it: ^7.6.4
 
 dev_dependencies:
   flutter_test:
