@@ -66,11 +66,23 @@ class SignUpForm extends HookConsumerWidget {
           (tsx) async {
             try {
               final notifier = tsx.get(authProvider.notifier);
-              await notifier.signUpWithEmailAndPassword(
+              final session = await notifier.signUpWithEmailAndPassword(
                 email: emailController.text.trim(),
                 password: passwordController.text.trim(),
               );
-              await router.replace(const HomeRoute());
+              if (session != null) {
+                await router.replace(const HomeRoute());
+                return;
+              }
+
+              scaffoldMessenger.showSnackBar(
+                const SnackBar(
+                  content: Text(
+                    'Check your email to confirm your account before signing in.',
+                  ),
+                ),
+              );
+              await router.replace(const SignInRoute());
             } on AuthRepositoryException catch (error, stackTrace) {
               ErrorLoggerService.instance.logError(
                 error,

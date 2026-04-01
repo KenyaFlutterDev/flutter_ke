@@ -14,9 +14,7 @@ class SplashPage extends ConsumerWidget {
     switch (currentValue) {
       case AsyncLoading():
         return;
-      // This private field will be used later.
-      // ignore: unused_local_variable
-      case AsyncData(:final value?):
+      case AsyncData(:final value) when value != null: 
         context.replaceRoute(const HomeRoute());
       default:
         context.replaceRoute(const SignUpRoute());
