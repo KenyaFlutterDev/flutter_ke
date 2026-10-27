@@ -6,7 +6,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mobile/repositories/auth_repo/auth_repository.dart';
 import 'package:mobile/router/app_router.dart';
 import 'package:mobile/router/app_router.gr.dart';
-import 'package:mobile/ui/home/pages/home_page.dart';
 import 'package:mocktail/mocktail.dart';
 
 class MockAuthRepository extends Mock implements AuthRepository {}
@@ -136,7 +135,7 @@ void main() {
     );
   });
 
-  testWidgets('submits with valid values and navigates to home', (
+  testWidgets('submits with valid values and navigates to sign in', (
     tester,
   ) async {
     await pumpSignUpPage(tester);
@@ -164,9 +163,10 @@ void main() {
       ),
     ).called(1);
     expect(
-      find.byWidgetPredicate((widget) => widget is HomePage),
+      find.text('Check your email to confirm your account before signing in.'),
       findsOneWidget,
     );
+    expect(find.text('Sign In'), findsOneWidget);
   });
 
   testWidgets('shows snackbar when sign up fails', (tester) async {

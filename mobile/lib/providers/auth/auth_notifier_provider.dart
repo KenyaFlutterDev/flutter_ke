@@ -27,12 +27,12 @@ class AuthNotifier extends _$AuthNotifier {
     );
   }
 
-  Future<void> signUpWithEmailAndPassword({
+  Future<Session?> signUpWithEmailAndPassword({
     required String email,
     required String password,
   }) async {
     final authRepository = await ref.read(authRepositoryProvider.future);
-    await authRepository.signUpWithEmailAndPassword(
+    return authRepository.signUpWithEmailAndPassword(
       email: email,
       password: password,
     );
