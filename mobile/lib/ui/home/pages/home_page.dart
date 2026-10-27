@@ -17,6 +17,7 @@ import 'package:mobile/ui/shared_widgets/empty_state.dart';
 import 'package:mobile/ui/shared_widgets/error_state.dart';
 import 'package:mobile/ui/shared_widgets/loading_indicator.dart';
 import 'package:mobile/ui/theme/app_spacing.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 final _logoutMutation = Mutation<void>();
 
@@ -165,6 +166,7 @@ class ChannelMessages extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     final messagesAsync = ref.watch(messagesProvider(channelId));
+    final authAsync = ref.watch(authProvider);
     final errorText = Text(
       'Failed to load messages',
       style: theme.textTheme.bodyLarge?.copyWith(color: Colors.white),
@@ -174,10 +176,16 @@ class ChannelMessages extends ConsumerWidget {
       style: theme.textTheme.bodyLarge?.copyWith(color: Colors.white),
     );
 
-    return switch (messagesAsync) {
-      AsyncData(value: []) => EmptyState(message: emptyText),
-      AsyncData(value: final messages) => MessagesList(messages: messages),
-      AsyncError() => ErrorState(message: errorText),
+    return switch ((messagesAsync, authAsync)) {
+      (AsyncData(value: []), AsyncData(value: final _)) => EmptyState(
+        message: emptyText,
+      ),
+      (AsyncData(value: final messages), AsyncData(value: final user)) =>
+        MessagesList(
+          messages: messages,
+          user: user,
+        ),
+      (AsyncError(), AsyncError()) => ErrorState(message: errorText),
       _ => const Center(child: LoadingIndicator()),
     };
   }
@@ -190,6 +198,7 @@ class ChannelsBody extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     final channelsAsync = ref.watch(channelsProvider);
+    final authAsync = ref.watch(authProvider);
     final errorText = Text(
       'Failed to load channel',
       style: theme.textTheme.bodyLarge?.copyWith(color: Colors.white),
@@ -211,7 +220,15 @@ class ChannelsBody extends ConsumerWidget {
             _ => const Center(child: LoadingIndicator()),
           },
         ),
-        const MessageInputBar(),
+        switch ((channelsAsync, authAsync)) {
+          (AsyncData(value: [final channel, ...]), AsyncData(value: final user))
+              when user != null =>
+            MessageInputBar(
+              channelId: channel.id,
+              userId: user.id,
+            ),
+          _ => const SizedBox.shrink(),
+        },
       ],
     );
   }
@@ -220,10 +237,12 @@ class ChannelsBody extends ConsumerWidget {
 class MessagesList extends StatelessWidget {
   const MessagesList({
     required this.messages,
+    this.user,
     super.key,
   });
 
   final List<Message> messages;
+  final User? user;
 
   @override
   Widget build(BuildContext context) {
@@ -235,9 +254,10 @@ class MessagesList extends StatelessWidget {
       itemBuilder: (context, index) {
         final message = messages[index];
         return MessageBubble(
-          sender: 'Admin',
+          sender: user?.id == message.userId ? 'Me' : 'Other',
           text: message.content ?? '',
-          isMe: true,
+          isMe: user?.id == message.userId,
+          time: message.createdAt ?? DateTime.now(),
         );
       },
     );
